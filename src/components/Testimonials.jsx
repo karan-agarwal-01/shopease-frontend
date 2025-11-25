@@ -1,5 +1,5 @@
 import React from 'react'
-import TestimonialCard from './common/testimonialCard'
+import TestimonialCard from './common/TestimonialCard'
 
 const Testimonials = () => {
   return (
