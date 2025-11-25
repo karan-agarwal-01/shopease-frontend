@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://shopease-khaki.vercel.app/api";
+const BASE_URL = "https://shopease-seven-lake.vercel.app/api";
 
 const Axios = axios.create({
     baseURL: BASE_URL,
