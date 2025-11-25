@@ -1,5 +1,5 @@
 import { toast } from "react-hot-toast";
-import Axios from "./axios";
+import Axios from "./axiosClient";
 
 export const registeruser = async (data) => {
     try {
