@@ -1,8 +1,8 @@
 import axios from "axios";
 import { refreshAccessToken } from "./apis";
 
-// const BASE_URL = "https://shopease-backend-eight.vercel.app/api";
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = "https://shopease-backend-eight.vercel.app/api";
+// const BASE_URL = "http://localhost:3000/api";
 
 const Axios = axios.create({
     baseURL: BASE_URL,
