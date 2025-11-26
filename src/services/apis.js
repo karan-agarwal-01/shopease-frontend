@@ -49,7 +49,7 @@ export const verifyUser = async () => {
         if (error.response?.status === 401 || error.response?.status === 403) {
             return null;
         }
-        toast.error(error.response?.data?.message || "Something went wrong");
+        // toast.error(error.response?.data?.message || "Something went wrong");
         return null;
     }
 };
@@ -60,7 +60,7 @@ export const getProfile = async () => {
         return res.data;
     } catch (error) {
         console.log(error)
-        toast.error(error.response.data.message || error.response.data);
+        // toast.error(error.response.data.message || error.response.data);
     }
 }
 
@@ -162,7 +162,7 @@ export const getCart = async () => {
         return res.data;
     } catch (error) {
         console.log(error)
-        toast.error(error.response.data.message || error.response.data);
+        // toast.error(error.response.data.message || error.response.data);
     }
 }
 
@@ -214,7 +214,7 @@ export const getUserOrder = async () => {
         return res.data;
     } catch (error) {
         console.log(error);
-        toast.error(error.response.data.message || error.response.data);
+        // toast.error(error.response.data.message || error.response.data);
     }
 }
 
@@ -241,6 +241,16 @@ export const updateOrderStatus = async (id, data) => {
 export const deleteOrder = async (id) => {
     try {
         const res = await Axios.delete(`/order/delete/${id}`);
+        return res.data;
+    } catch (error) {
+        console.log(error);
+        toast.error(error.response.data.message || error.response.data);
+    }
+}
+
+export const cancelOrder =  async (id) => {
+    try {
+        const res = await Axios.put(`/order/cancel/${id}`);
         return res.data;
     } catch (error) {
         console.log(error);

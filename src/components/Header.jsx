@@ -30,14 +30,14 @@ const Header = () => {
 
     if (loading) {
         return (
-          <div className="min-h-screen flex items-center justify-center bg-gray-400">
+          <div className="min-h-screen flex items-center justify-center bg-[#f3f4f6]">
               <div className="w-10 h-10 border-4 border-gray-300 border-t-indigo-600 rounded-full animate-spin"></div>
           </div>
         )
     }
 
     return (
-        <header className="bg-white shadow-sm sticky top-0 z-50">
+        <header className="bg-white shadow-sm sticky top-0 z-100">
             <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
                 <Link to="/" className="text-2xl font-bold text-indigo-600">ShopEase</Link>
                 <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">

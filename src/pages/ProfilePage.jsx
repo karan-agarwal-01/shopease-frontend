@@ -25,7 +25,7 @@ const ProfilePage = () => {
 
     if (loading) {
         return (
-            <div className="min-h-[90vh] flex items-center justify-center bg-gray-400">
+            <div className="min-h-[90vh] flex items-center justify-center bg-[#f3f4f6]">
                 <div className="w-10 h-10 border-4 border-gray-300 border-t-indigo-600 rounded-full animate-spin"></div>
             </div>
         );
@@ -33,7 +33,7 @@ const ProfilePage = () => {
 
     if (!profile?.fullname) {
         return (
-            <div className="min-h-[90vh] flex items-center justify-center bg-gray-400">
+            <div className="min-h-[90vh] flex items-center justify-center bg-[#f3f4f6]">
                 <div className="bg-white p-6 shadow-xl rounded-xl text-center max-w-sm w-full">
                     <h1 className="text-xl font-semibold text-gray-800">Profile not created</h1>
                     <a href="/create-profile" className="text-blue-600 mt-3 inline-block font-medium">Create your profile</a>
@@ -46,7 +46,7 @@ const ProfilePage = () => {
     }
 
     return (
-        <div className="min-h-[90vh] bg-gray-400 flex items-center justify-center p-6">
+        <div className="min-h-[90vh] bg-[#f3f4f6] flex items-center justify-center p-6">
             <div className="bg-white shadow-2xl rounded-2xl p-8 max-w-md w-full text-center relative">
                 <h1 className="text-2xl font-bold mt-6 text-gray-900">{profile.fullname}</h1>
                 <h1 className="text-gray-600 mt-2 px-4">{profile.email}</h1>

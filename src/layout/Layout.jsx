@@ -5,7 +5,7 @@ const Layout = ({ title, onSubmit, navigateRoute, navigateTitle, disabled, butto
     const navigate = useNavigate();
 
     return (
-        <div style={style} className="min-h-screen flex items-center justify-center bg-gray-400 p-2">
+        <div style={style} className="min-h-screen flex items-center justify-center bg-[#f3f4f6] p-2">
             <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
                 <h2 className="text-2xl font-bold text-center text-indigo-600 mb-6">{title}</h2>
                 <form onSubmit={onSubmit}>

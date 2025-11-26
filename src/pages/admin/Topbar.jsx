@@ -1,8 +1,11 @@
 import { HiMenu } from "react-icons/hi";
 import { logout } from "../../services/apis";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const Topbar = ({ onMenuClick }) => {
+
+    const navigate = useNavigate();
 
     const handleLogout = async () => {
         const res = await logout();
@@ -18,7 +21,7 @@ const Topbar = ({ onMenuClick }) => {
                 <HiMenu />
             </button>
             <div className="flex items-center gap-4">
-                <div className="text-2xl font-bold">ShopEase Admin</div>
+                <div onClick={() => navigate('/')} className="text-2xl font-bold cursor-pointer text-indigo-600">ShopEase Admin</div>
             </div>
             <div className="flex items-center gap-3">
                 <button onClick={handleLogout} className="px-3 py-1 rounded bg-red-600 text-white cursor-pointer hover:bg-red-800">Logout</button>
