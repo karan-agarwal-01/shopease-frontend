@@ -3,6 +3,7 @@ import { createPayment, getUserOrder, cancelOrder } from "../services/apis";
 import { FiX } from "react-icons/fi";
 import { useParams } from "react-router-dom";
 import TrackOrderPage from "./TrackOrderPage";
+import { toast } from "react-hot-toast";
 
 const Checkout = () => {
   const [order, setOrder] = useState([]);
@@ -33,13 +34,13 @@ const Checkout = () => {
   };
 
   const handleCancelOrder = async () => {
-    if (!window.confirm("Are you sure you want to cancel this order?")) return;
     setIsCancelling(true);
-
     const res = await cancelOrder(order._id);
-    alert(res?.message);
-    await loadOrder();
-    setIsCancelling(false);
+    if (res) {
+      toast.success(res?.message);
+      await loadOrder();
+      setIsCancelling(false);
+    }
   };
 
   if (loading) {

@@ -3,6 +3,7 @@ import { deleteProduct, fetchProduct } from "../../services/apis";
 import PageTitle from "./PageTitle";
 import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -24,8 +25,10 @@ const Products = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    if (!confirm("Delete product?")) return;
-    await deleteProduct(id);
+    const res = await deleteProduct(id);
+    if (res) {
+      toast.success(res.message);
+    }
     setProducts((p) => p.filter((x) => x._id !== id));
   };
 

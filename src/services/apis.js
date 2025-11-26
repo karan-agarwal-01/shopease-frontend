@@ -23,8 +23,7 @@ export const loginuser = async (data) => {
 
 export const refreshAccessToken = async () => {
     try {
-        const res = await Axios.post(`/auth/refresh`);
-        return res.data;
+        await Axios.post(`/auth/refresh`);
     } catch (error) {
         console.log(error)
         toast.error(error.response.data.message || error.response.data);

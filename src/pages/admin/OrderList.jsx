@@ -5,6 +5,7 @@ import PageTitle from "./PageTitle";
 import Badge from "./Badge";
 import { FaEye } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { toast } from "react-hot-toast";
 
 const OrdersList = () => {
     const [orders, setOrders] = useState([]);
@@ -33,8 +34,10 @@ const OrdersList = () => {
     };
   
     const handleDelete = async (id) => {
-      if (!confirm('Delete this order?')) return;
-      await deleteOrder(id);
+      const res = await deleteOrder(id);
+      if (res) {
+        toast.success(res.message)
+      }
       setOrders((s) => s.filter(o => o._id !== id));
     };
   

@@ -1,6 +1,8 @@
 import axios from "axios";
+import { refreshAccessToken } from "./apis";
 
-const BASE_URL = "https://shopease-backend-eight.vercel.app/api";
+// const BASE_URL = "https://shopease-backend-eight.vercel.app/api";
+const BASE_URL = "http://localhost:3000/api";
 
 const Axios = axios.create({
     baseURL: BASE_URL,
@@ -12,11 +14,11 @@ Axios.interceptors.response.use(
     async (error) => {
         const originalRequest = error.config;
         
-        if (error.response?.status === 403 && !originalRequest._retry) {
+        if ((error.response?.status === 401 || error.response?.status === 403) && !originalRequest._retry) {
             originalRequest._retry = true;
 
             try {
-                await Axios.get("/auth/refresh");
+                await refreshAccessToken();
                 return Axios(originalRequest);
             } catch (err) {
                 window.location.href = "/login";

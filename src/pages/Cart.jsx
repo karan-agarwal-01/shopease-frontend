@@ -116,11 +116,11 @@ const Cart = () => {
             {cartData.map((item) => (
               <div key={item._id} className="flex items-center justify-between bg-white p-4 rounded-xl shadow w-full">
                 <div className="flex items-center w-[85%]">
-                  <img src={item.product.image} className="w-24 h-24 rounded-xl object-cover" />
+                  <img src={item.product?.image} className="w-24 h-24 rounded-xl object-cover" />
                   <div className="ml-4 flex-1">
-                    <h3 className="font-bold">{item.product.name}</h3>
+                    <h3 className="font-bold">{item.product?.name}</h3>
                     <div className="flex items-center gap-2 my-4">
-                      <div>₹{item.product.price}</div>
+                      <div>₹{item.product?.price}</div>
                       <FiX />
                       <div className="flex items-center gap-2">
                         <input type='text' min={1} value={item.newQty ?? item.quantity} onChange={(e) => {
