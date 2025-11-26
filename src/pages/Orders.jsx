@@ -47,7 +47,7 @@ const Orders = () => {
                 <h2 className="font-semibold text-gray-800">
                   Order ID: <span className="text-blue-600 break-all">{order._id}</span>
                 </h2>
-                <span className={`px-4 py-1 w-22 text-sm font-semibold rounded-md ${ order.status === "Confirmed" ? "bg-green-100 text-green-700" : order.status === "Pending" ? "bg-yellow-100 text-yellow-700" : "bg-red-100 text-red-700"}`}>{order.status}</span>
+                <span className={`px-4 py-1 w-22 text-sm font-semibold rounded-md ${ order.status === "Confirmed" ? "bg-green-100 text-green-700" : order.status === "Pending" ? "bg-yellow-100 text-yellow-700" : order.status === "Cancelled" ? "bg-red-100 text-red-700" : "bg-gray-100 text-gray-700"}`}>{order.status}</span>
               </div>
               <div className="mt-4 flex flex-wrap justify-between items-center text-gray-700">
                 <p className="text-lg font-semibold">

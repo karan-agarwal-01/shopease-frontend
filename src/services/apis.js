@@ -26,7 +26,7 @@ export const refreshAccessToken = async () => {
         await Axios.post(`/auth/refresh`);
     } catch (error) {
         console.log(error)
-        toast.error(error.response.data.message || error.response.data);
+        // toast.error(error.response.data.message || error.response.data);
     }
 }
 
